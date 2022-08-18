@@ -1,0 +1,133 @@
+---
+title: "R in 3 Months: Week 4 (Data Viz)"
+output:
+  xaringan::moon_reader:
+    css: ["style.css", "default"]
+    lib_dir: libs
+    df_print: paged
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: 16:9
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r eval=TRUE, message=FALSE, warning=FALSE, include=FALSE}
+options(htmltools.preserve.raw = FALSE)
+knitr::opts_chunk$set(message = FALSE,
+                      warning = FALSE)
+library("tidyverse")
+library("wakefield")
+library(palmerpenguins)
+library(lubridate)
+library(janitor)
+library(hrbrthemes)
+```
+
+
+# Agenda
+
+--
+
+1. Housekeeping
+
+--
+
+1. Four Tips
+
+--
+
+1. Data Viz Examples
+
+--
+
+1. Next Week
+
+---
+
+# Housekeeping
+
+--
+
+- Next week we won't have a live session, but you can book a one-to-one with Charlie
+
+---
+
+class: inverse, center, middle
+
+
+# Four Tips
+
+---
+
+## Save Source, not Workspace
+
+Why do we not want to reload our data when we start RStudio? 
+
+---
+
+class: center, middle
+
+[![](https://rstats.wtf/img/if-you-liked-it-you-should-have-saved-the-source-for-it.jpg)](https://rstats.wtf/save-source.html)
+
+Source: [rstats.wtf](https://rstats.wtf/save-source.html)
+
+
+---
+
+class: inverse, center, middle
+
+# Data Viz Examples
+
+---
+
+---
+
+class: inverse, center, middle
+
+# Workflow Advice
+
+---
+
+## Charlie Data Viz Example
+
+---
+
+## Oregon by the Numbers Example
+
+![](images/obtn-race-ethnicity.jpeg)
+
+---
+
+# Data Visualization Questions
+
+What questions do you still have? 
+
+---
+
+# Next Week
+
+--
+
+1. `r emo::ji("desert_island")` Catch up week. `r emo::ji("desert_island")`
+
+--
+
+1. No additional assignments, but please complete anything you're behind on
+
+--
+
+1. No live session
+
+--
+
+1. Office hours **will** happen
+
+--
+
+1. Book a one-to-one session with Charlie: [rfor.us/charliechat](https://rfor.us/charliechat)
+
+
+
