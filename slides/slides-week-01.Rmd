@@ -143,16 +143,14 @@ ggsave(here::here("slides", "images", "map-students.png"),
 
 ### How often have folks used R so far?
 
-**TODO: REDO THE SURVEY**
-
 ```{r, eval=FALSE, echo=FALSE}
-pre_survey <- read_sheet("https://docs.google.com/spreadsheets/d/19Ny92IGg0ZzIqiLs7QywaGF-Y85HQZn1iIIXN4I_tpg/edit?resourcekey#gid=1201619159") %>% 
+pre_survey <- read_sheet("https://docs.google.com/spreadsheets/d/1oQ3pPPKfZkegrumf0OS3omI2TjP8duKFFZU8d2tlX_g/edit") %>% 
   clean_names()
 ```
 
 
 ```{r, eval=FALSE, echo=FALSE, fig.width=12, fig.height=4, dpi=300}
-pre_survey_spring_2022 <- pre_survey %>% 
+pre_survey_vsa_2022 <- pre_survey %>% 
   mutate(year = year(timestamp)) %>% 
   filter(timestamp > ymd("2022-01-01"),
          timestamp < ymd("2022-07-01"),
@@ -160,7 +158,7 @@ pre_survey_spring_2022 <- pre_survey %>%
   mutate(how_much_have_you_used_r = factor(how_much_have_you_used_r,
                                            levels = c("Never", "Very Infrequently", "Occasionally", "Frequently")))
 
-pre_survey_spring_2022 %>% 
+pre_survey_vsa_2022 %>% 
   select(how_much_have_you_used_r) %>% 
   count(how_much_have_you_used_r) %>% 
   ggplot(aes(x = n,
@@ -179,10 +177,8 @@ pre_survey_spring_2022 %>%
 
 ### Expertise with using R for dataviz
 
-**TODO: REDO THE SURVEY**
-
 ```{r, eval=FALSE, echo=FALSE, fig.width=12, fig.height=4, dpi=300}
-data_viz_expertise <- pre_survey_spring_2022 %>% 
+data_viz_expertise <- pre_survey_vsa_2022 %>% 
   select(how_would_you_rate_your_level_of_expertise_working_with_r_for_data_visualization) %>% 
   count(how_would_you_rate_your_level_of_expertise_working_with_r_for_data_visualization) %>%
   rename(data_viz_expertise = how_would_you_rate_your_level_of_expertise_working_with_r_for_data_visualization) %>% 
@@ -209,10 +205,8 @@ data_viz_expertise %>%
 
 ### How do you feel about the process of learning R?
 
-**TODO: REDO THE SURVEY**
-
 ```{r, eval=FALSE, echo=FALSE, fig.width=12, fig.height=4, dpi=300}
-how_terrified <- pre_survey_spring_2022 %>% 
+how_terrified <- pre_survey_vsa_2022 %>% 
   select(on_a_scale_from_terrified_to_excited_how_do_you_feel_about_the_process_of_learning_r) %>% 
   count(on_a_scale_from_terrified_to_excited_how_do_you_feel_about_the_process_of_learning_r) %>%
   rename(how_terrified = on_a_scale_from_terrified_to_excited_how_do_you_feel_about_the_process_of_learning_r) %>% 
