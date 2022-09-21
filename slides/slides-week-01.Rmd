@@ -60,9 +60,9 @@ world_sf <- countries110 %>%
 
 # Survey
 
-If you haven't yet completed the pre-survey, [please do so now](https://forms.gle/JpSFepUULeMySAzk7).
+If you haven't yet completed the pre-survey, [please do so now](https://forms.gle/KEAH5HYSeDUvdNGt8).
 
-<center><img src='images/rin3-survey-screenshot.png' width='350px'/></center>
+<center><img src='images/vsa-pre-survey-screenshot.png' width='350px'/></center>
 
 ---
 
@@ -117,8 +117,11 @@ geocoded_participants <- participants_2022_vsa %>%
           country = country,
           method = "iq")
 
+us_sf <- world_sf %>% 
+  filter(sovereignt == "United States of America")
+
 gg_participants_map <- ggplot() +
-  geom_sf(data = world_sf,
+  geom_sf(data = us_sf,
           fill = "bisque",
           color = "white",
           size = 0.5) +
