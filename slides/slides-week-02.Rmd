@@ -1,5 +1,5 @@
 ---
-title: "R in 3 Months: Week 2 (RMarkdown)"
+title: "VSA R Training: Week 2 (RMarkdown)"
 output:
   xaringan::moon_reader:
     css: ["style.css", "default"]
@@ -62,7 +62,7 @@ You should be getting emails when we post feedback
 
 --
 
-You can see everyone's feedback here: https://rfor.us/spring22feedback
+You can see everyone's feedback here: https://rfortherestofus.com/vsa-feedback-fall-2022/
 
 ???
 
@@ -121,7 +121,7 @@ In this report we'll look at whether it's common to see movies that fail the tes
 
 ---
 
-#### Bullets with/without spacing
+### Bullets with/without spacing
 
 ... without spacing bullets look scrunched up
 
@@ -292,6 +292,14 @@ Your RMarkdown document can then read in the *local* version of the file.
 --
 
 This is only good advice if your data file doesn't change over time.
+
+---
+
+# RStudio Projects
+
+Always use RStudio projects!
+
+<div class="muse-video-player" data-video="cXFZUsM" data-logo="0" data-width="600"></div><script src="https://muse.ai/static/js/embed-player.min.js"></script>
 
 ---
 
