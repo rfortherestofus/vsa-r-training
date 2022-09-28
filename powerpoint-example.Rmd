@@ -1,0 +1,38 @@
+---
+title: "Report"
+output: 
+  html_document:
+    css: charlie-styles.css
+---
+
+# Bechdel Test
+
+**The Bechdel test is a simple test of whether a film has women with agency:**
+
+-   Does the movie contain 2 characters who are women
+
+-   Are they named
+
+-   Do they have a conversation about something other than man (or further the plot line of a man)
+
+In this report we'll look at whether it's common to see movies that fail the test.
+
+```{r}
+cars
+
+mtcars
+
+pressure
+```
+
+```{r}
+google_forms_data <- read_excel("data/google-forms-data.xlsx")
+
+google_forms_data
+```
+
+
+```{r}
+library(readxl)
+```
+

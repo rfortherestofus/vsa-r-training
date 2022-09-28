@@ -18,8 +18,12 @@ knitr::opts_chunk$set(
 	message = FALSE,
 	warning = FALSE
 )
+```
+
+```{r load-packages}
 library(tidyverse)
 ```
+
 
 
 # Agenda
@@ -83,40 +87,6 @@ Show PSC
 https://housingprofiles.pschousing.org
 
 https://housing-profiles.s3.amazonaws.com/2020/East%20Hartford.pdf
-
----
-
-
-### Styling RMarkdown
-
-The way you style the text (images and spacing!) in your RMarkdown document depends on your output type:
-
-.pull-left[
-```{yaml}
----
-title: "My report"
-output: 
-  html_document:
-    css: charlie-styles.css
----
-```
-]
-
-.pull-right[
-```{yaml}
----
-title: "My report"
-output:
-  word_document:
-    reference_docx: charlie-styles.docx
----
-```
-]
-
-<br>
-
-There's a [new lesson about CSS and reference documents](https://rfortherestofus.com/courses/vsa-r-training-fall-2022/lessons/styling-rmarkdown-docs-2/) for styling RMarkdown reports.
-
 
 ---
 
