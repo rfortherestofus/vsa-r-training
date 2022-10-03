@@ -30,7 +30,7 @@ library(palmerpenguins)
 
 --
 
-1. Four tips
+1. Tips from feedback
 
 --
 
@@ -50,10 +50,6 @@ library(palmerpenguins)
 
 --
 
-- GitHub discussions recap
-
---
-
 - Questions on project assignments?
 
 --
@@ -65,8 +61,98 @@ library(palmerpenguins)
 
 class: inverse, center, middle
 
-# Four tips
+# Tips from feedback
 
+---
+
+# Tips from feedback
+
+- NA values in R
+
+- read_csv() vs read.csv()
+
+- Typos happen to everyone
+
+---
+
+## How R handles NA
+
+--
+
+SPSS has named NA values
+
+--
+
+In R, a value is only NA if it shows up in light gray
+
+
+---
+
+## How R handles NA
+
+```{r eval = TRUE}
+penguins
+```
+
+---
+
+## How R handles NA
+
+```{r eval = TRUE}
+penguins %>% 
+  mutate(not_actually_na = "NA")
+```
+
+
+---
+
+## How R handles NA
+
+--
+
+> NA in the R language explicitly means missing. If you have an Excel worksheet with empty cells then these will become NA when imported into R. The drop_na() function will drop all rows which contain an NA, but can target specific columns by naming them , eg drop_na(shipment_date).
+
+---
+
+# NA values
+
+We were asked about replacing NA values in datasets.
+
+The `{tidyr}` package provides two really useful functions for doing this
+
+- `replace_na()` will replace existing `NA` values with your chosen values
+
+- `na_if()` will replace values you specify with `NA`
+
+---
+
+## replace_na()
+
+```{r}
+msleep %>% 
+  select(name, conservation) %>% 
+  mutate(conservation = replace_na(conservation, "unknown"))
+```
+
+---
+
+## na_if()
+
+```{r}
+starwars %>%
+  select(name, eye_color) %>%
+  mutate(eye_color = na_if(eye_color, "unknown"))
+```
+
+---
+
+## read_csv() vs read.csv()
+
+- It understands empty cells as NA automatically
+
+- It's smarter! It will more often detect complex data types
+
+- It's **much** faster.
 
 ---
 
