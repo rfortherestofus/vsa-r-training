@@ -14,10 +14,12 @@ knitr::opts_chunk$set(echo = FALSE,
 ```{r}
 library(tidyverse)
 library(gt)
-
-# If you don't have palmerpenguins installed, please run install.packages("palmerpenguins") in the console
-library(palmerpenguins)
 ```
+
+```{r}
+# Read in your penguins data here
+```
+
 
 # Average Bill Length by Island
 

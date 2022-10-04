@@ -221,15 +221,20 @@ get_acs(year = 2019,
 
 # Group Work
 
-Create
+
+Create a new RStudio project
 
 --
 
-Copy the penguins report RMarkdown document into RStudio
+Download the penguins.csv file and add it to your project
 
 --
 
-Fill out the final code chunk
+Copy the penguins report RMarkdown document into RStudio and save as an RMarkdown file
+
+--
+
+Fill out the blank code chunks to create your report
 
 --
 
