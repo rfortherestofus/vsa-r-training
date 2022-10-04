@@ -73,6 +73,10 @@ class: inverse, center, middle
 
 - %in% operator
 
+- Quotes
+
+- Assigning vs displaying
+
 - Typos happen to everyone
 
 
@@ -173,9 +177,11 @@ starwars %>%
   mutate(eye_color = na_if(eye_color, "unknown"))
 ```
 
+
 ---
 
-# %in% operator
+## %in% operator
+
 
 > I’m wondering if you know why one needs to concatenate multiple observations in the filter function. For example, here’s a correct use of filter:
 
@@ -186,6 +192,15 @@ starwars %>%
 > `filter(marital_status %in% (“DivorcedSeparatedWidowed”))`
 
 > I get an error message. Maybe the answer is “That’s just how R works,” but I’m trying to build a solid mental model for these functions, so if there’s anything more to it, I’d love to better understand. Thanks!
+
+
+---
+
+## Assigning vs displaying
+
+--
+
+## Quotes
 
 
 ---
