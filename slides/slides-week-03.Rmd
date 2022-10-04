@@ -1,5 +1,5 @@
 ---
-title: "R in 3 Months: Week 3 (Data Wrangling and Analysis)"
+title: "VSA R Training: Week 3 (Data Wrangling and Analysis)"
 output:
   xaringan::moon_reader:
     css: ["style.css", "default"]
@@ -67,11 +67,25 @@ class: inverse, center, middle
 
 # Tips from feedback
 
-- NA values in R
-
 - read_csv() vs read.csv()
 
+- NA values in R
+
+- %in% operator
+
 - Typos happen to everyone
+
+
+---
+
+## read_csv() vs read.csv()
+
+- It understands empty cells as NA automatically
+
+- It's smarter! It will more often detect complex data types
+
+- It's **much** faster.
+
 
 ---
 
@@ -114,7 +128,22 @@ penguins %>%
 
 ---
 
-# NA values
+## NA values
+
+First, remember that you can use the `na` argument in the `read_csv()` function.
+
+--
+
+```{r eval = FALSE}
+my_data <- read_csv("my-data.csv",
+                    na = c("999", "9999")) #<<
+```
+
+
+
+---
+
+## NA values
 
 We were asked about replacing NA values in datasets.
 
@@ -146,13 +175,18 @@ starwars %>%
 
 ---
 
-## read_csv() vs read.csv()
+# %in% operator
 
-- It understands empty cells as NA automatically
+> I’m wondering if you know why one needs to concatenate multiple observations in the filter function. For example, here’s a correct use of filter:
 
-- It's smarter! It will more often detect complex data types
+> `filter(marital_status %in% c(“Divorced”, “Separated”, “Widowed”))`
 
-- It's **much** faster.
+> From what I understand of the concatenate function (from Excel), wouldn’t that basically mean R is looking at each observation in marital_status and seeing if that observation can be found anywhere inside “DivorcedSeparatedWidowed”? But when I try it without concatenating by doing this:
+
+> `filter(marital_status %in% (“DivorcedSeparatedWidowed”))`
+
+> I get an error message. Maybe the answer is “That’s just how R works,” but I’m trying to build a solid mental model for these functions, so if there’s anything more to it, I’d love to better understand. Thanks!
+
 
 ---
 
@@ -187,13 +221,15 @@ get_acs(year = 2019,
 
 # Group Work
 
-- Each person share your code (either share your Gist link or by sharing your screen)
+Copy the penguins report RMarkdown document into RStudio
 
-- Presenter gives a short (~1 minute overview)
+--
 
-- Others look for one thing that doesn't make sense
+Fill out the final code chunk
 
-- Presenter responds to questions
+--
+
+Make sure you can knit your document!
 
 ---
 
