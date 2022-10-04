@@ -221,6 +221,10 @@ get_acs(year = 2019,
 
 # Group Work
 
+Create
+
+--
+
 Copy the penguins report RMarkdown document into RStudio
 
 --
