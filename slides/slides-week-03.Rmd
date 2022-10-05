@@ -19,6 +19,7 @@ options(htmltools.preserve.raw = FALSE)
 library("tidyverse")
 library("wakefield")
 library(palmerpenguins)
+library(janitor)
 ```
 
 
@@ -200,8 +201,58 @@ starwars %>%
 
 --
 
+This displays the results of the code
+
+```{r}
+penguins_raw %>% 
+  clean_names()
+```
+
+---
+
+## Assigning vs displaying
+
+But then in the next code chunk, `penguins_raw` hasn't changed:
+
+```{r}
+penguins_raw 
+```
+
+---
+
+## Assigning vs displaying
+
+We have to assign the results of our code to use them later on:
+
+```{r}
+penguins_good_names <- penguins_raw %>% 
+  clean_names()
+```
+
+```{r}
+penguins_good_names
+```
+
+
+
+
+---
+
 ## Quotes
 
+> Could you please go over the use of “quotes” around a term. When are quotes required, and when are they not necessary? For example, quotes are used here – select(contains(“hlth_bad”)). But no quotes are used here – select(marital_status, education).
+
+---
+
+## Why doesn't this work?
+
+```{r eval = FALSE}
+penguins %>% 
+  summarize(mean_bill_length = mean(bill_length_mm,
+                                    na.rm = TRUE)) %>% 
+  summarize(mean_bill_depth = mean(bill_depth_mm,
+                                    na.rm = TRUE))
+```
 
 ---
 
