@@ -198,12 +198,6 @@ class: inverse, center, middle
 
 ---
 
-class: inverse, center, middle
-
-# Workflow Advice
-
----
-
 ## Charlie Data Viz Example
 
 ---
