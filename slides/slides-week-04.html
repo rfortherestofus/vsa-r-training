@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>R in 3 Months: Week 4 (Data Viz)</title>
+    <title>VSA R Training: Week 4 (Data Viz)</title>
     <meta charset="utf-8" />
     <script src="libs/header-attrs-2.16/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
@@ -14,7 +14,7 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# R in 3 Months: Week 4 (Data Viz)
+# VSA R Training: Week 4 (Data Viz)
 ]
 
 ---
@@ -94,23 +94,23 @@ However, it's advised that **one code chunk displays one thing in the output doc
 When we start naming code chunks it makes sense to restrict code chunks to one output
 
 
-````yaml
-```{r, table-count-diet}
+
+```r
 msleep %&gt;% 
   count(vore)
   gt()
 ```
-````
 
 
-````yaml
-```{r, table-diet-mean-sleep}
+
+
+```r
 msleep %&gt;% 
   group_by(vore) %&gt;% 
   summarise(mean_sleep = mean(sleep_total, na.rm = TRUE))
   gt()
 ```
-````
+
 
 This also helps us if we choose to use internal cross-referencing in more complex reports.
 
@@ -139,16 +139,40 @@ your_data &lt;- your_data %&gt;%
 
 The `tabyl()` and `adorn_*()` functions from `{janitor}` are useful for quick summaries.
 
+--
+
 The `{scales}` package provides functions for formatting all sorts of numbers
 
 
 ```r
-scales::label_percent()(c(0.3, 1))
+library(scales)
+```
+
+
+
+```r
+percent(0.3)
 ```
 
 ```
-## [1] "30%"  "100%"
+## [1] "30%"
 ```
+
+--
+
+
+```r
+percent(1)
+```
+
+```
+## [1] "100%"
+```
+
+---
+
+## Making nice % columns
+
 
 
 ```r

@@ -1,5 +1,5 @@
 ---
-title: "R in 3 Months: Week 4 (Data Viz)"
+title: "VSA R Training: Week 4 (Data Viz)"
 output:
   xaringan::moon_reader:
     css: ["style.css", "default"]
@@ -97,22 +97,22 @@ However, it's advised that **one code chunk displays one thing in the output doc
 
 When we start naming code chunks it makes sense to restrict code chunks to one output
 
-````{yaml}
-```{r, table-count-diet}
+
+```{r, table-count-diet, eval = FALSE}
 msleep %>% 
   count(vore)
   gt()
 ```
-````
 
-````{yaml}
-```{r, table-diet-mean-sleep}
+
+
+```{r, table-diet-mean-sleep, eval = FALSE}
 msleep %>% 
   group_by(vore) %>% 
   summarise(mean_sleep = mean(sleep_total, na.rm = TRUE))
   gt()
 ```
-````
+
 
 This also helps us if we choose to use internal cross-referencing in more complex reports.
 
@@ -139,15 +139,41 @@ your_data <- your_data %>%
 
 The `tabyl()` and `adorn_*()` functions from `{janitor}` are useful for quick summaries.
 
+--
+
 The `{scales}` package provides functions for formatting all sorts of numbers
 
 ```{r}
-scales::label_percent()(c(0.3, 1))
+library(scales)
 ```
 
+
 ```{r}
-scales::label_dollar()(c(20, 2E6))
+percent(0.3)
 ```
+
+--
+
+```{r}
+percent(1)
+```
+
+---
+
+## Making nice % columns
+
+
+```{r}
+dollar(20)
+```
+
+--
+
+```{r}
+dollar(2000000)
+```
+
+
 
 ---
 
