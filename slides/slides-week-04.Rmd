@@ -200,6 +200,8 @@ class: inverse, center, middle
 
 ## Charlie Data Viz Example
 
+![](images/week-4_charlie-data-viz.png)
+  
 ---
 
 ## Oregon by the Numbers Example

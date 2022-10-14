@@ -34,20 +34,23 @@ gdp_recent_growth <- gdp_annual_growth %>%
   filter(year == max(year)) %>% 
   drop_na()
 
-gdp_recent_high_growth <- gdp_recent_growth %>% 
-  slice_max(gdp_growth, n = 5) 
+gdp_recent_ordered <- gdp_recent_growth %>% 
+  arrange(desc(gdp_growth))
 
-gdp_recent_low_growth <- gdp_recent_growth %>% 
-  slice_min(gdp_growth, n = 5) 
+biggest_shrinkers <- gdp_recent_ordered %>% 
+  tail(n = 5)
 
-gdp_recent_growth_extremes <- bind_rows(gdp_recent_high_growth, gdp_recent_low_growth)
+biggest_growers <- gdp_recent_ordered %>% 
+  head(n = 5)
 
-gdp_recent_growth_extremes %>% 
+biggest_shrinkers %>% 
+  bind_rows(biggest_growers) %>% 
+  mutate(country = fct_reorder(country, gdp_growth)) %>% 
   ggplot(aes(x = gdp_growth,
-             y = country)) +
+             y = country,
+             fill = ifelse(gdp_growth > 0, "Growth", "Shrink"))) +
   geom_col() +
-  theme_minimal()
-
-
+  scale_fill_manual(values = c("Growth" = "gold",
+                               "Shrink" = "grey"))
 
 

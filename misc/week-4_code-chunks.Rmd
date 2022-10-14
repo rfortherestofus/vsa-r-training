@@ -1,0 +1,64 @@
+---
+title: "Untitled"
+output: html_document
+date: "2022-10-12"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(gt)
+library(scales)
+```
+
+# msleep
+
+```{r table-vore}
+msleep %>% 
+  count(vore) %>% 
+  gt()
+```
+
+
+```{r table-sleep-time-by-vore}
+msleep %>% 
+  group_by(vore) %>% 
+  summarise(mean_sleep = mean(sleep_total)) %>% 
+  gt()
+```
+
+## sleep as %
+
+```{r}
+msleep$sleep_total_perc <- msleep$sleep_total / 24
+```
+
+```{r}
+msleep %>% 
+  mutate(sleep_total_perc_tidy = sleep_total / 24,
+         sleep_rem_perc = sleep_rem / 24)
+```
+
+```{r}
+msleep %>% 
+  mutate(across(contains("sleep"), ~ . / 24))
+```
+
+```{r}
+percent(0.46)
+```
+
+```{r}
+msleep %>% 
+  mutate(sleep_total_perc_tidy = percent(sleep_total / 24),
+         sleep_rem_perc = percent(sleep_rem / 24))
+```
+
+```{r}
+dollar(20E6, big.mark = " ")
+```
+
+```{r}
+label_dollar(prefix = "£")(3000)
+```
+
