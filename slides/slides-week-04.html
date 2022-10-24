@@ -3,7 +3,7 @@
   <head>
     <title>VSA R Training: Week 4 (Data Viz)</title>
     <meta charset="utf-8" />
-    <script src="libs/header-attrs-2.16/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.17/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
     <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
@@ -176,12 +176,25 @@ percent(1)
 
 
 ```r
-scales::label_dollar()(c(20, 2E6))
+dollar(20)
 ```
 
 ```
-## [1] "$20"        "$2,000,000"
+## [1] "$20"
 ```
+
+--
+
+
+```r
+dollar(2000000)
+```
+
+```
+## [1] "$2,000,000"
+```
+
+
 
 ---
 
@@ -206,14 +219,10 @@ class: inverse, center, middle
 
 ---
 
-class: inverse, center, middle
-
-# Workflow Advice
-
----
-
 ## Charlie Data Viz Example
 
+![](images/week-4_charlie-data-viz.png)
+  
 ---
 
 ## Oregon by the Numbers Example
