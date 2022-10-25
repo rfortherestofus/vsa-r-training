@@ -76,7 +76,7 @@ class: inverse, center, middle
 
 ## Making beautiful tables in Rmd
 
-While there's one package we recommend for charts ({ggplot2})... the package landscape is more complicated for tables.
+While there's one package we recommend for charts (`ggplot2`)... the package landscape is more complicated for tables.
 
 David has written a [great blogpost comparing the most widely used packages](https://rfortherestofus.com/2019/11/how-to-make-beautiful-tables-in-r/).
 
@@ -199,7 +199,7 @@ ggplot(data = penguins,
        aes(x = flipper_length_mm,
            y = bill_length_mm)) +
   geom_point() +
-  labs(title = "Penguins are <em>really cool</em>")
+  labs(title = "Penguins are *really cool*")
 ```
 
 ```{r, out.width='300px', echo=FALSE}
@@ -207,9 +207,14 @@ ggplot(data = penguins,
        aes(x = flipper_length_mm,
            y = bill_length_mm)) +
   geom_point() +
-  labs(title = "Penguins are <em>really cool</em>") +
+  labs(title = "Penguins are *really cool*") +
   theme(plot.title = element_markdown(size = 30))
 ```
+
+???
+
+I think it’s worth telling the students to abandon any stackoverflow question that mentions using expression() for formatting text
+
 
 ---
 
@@ -219,7 +224,11 @@ class: inverse, center, middle
 
 ???
 
-- Have to save files first
+---
+
+## Save files first
+
+If you don't save your files first, you can't commit them
 
 ---
 
@@ -247,7 +256,13 @@ Remember you will need to **pull** the changes onto your local machine.
 
 ## Other things you can do with Git and GitHub
 
+--
+
 How we publish slides every week
+
+--
+
+How we use issues
 
 ---
 
@@ -255,11 +270,6 @@ class: inverse, center, middle
 
 ## Git + GitHub Questions
 
-???
-
-Need to save first in order to commit
-
-Can only commit items that have been modified since last commit
 
 
 ---
@@ -282,6 +292,10 @@ Can only commit items that have been modified since last commit
 --
 
 1. You'll work in your GitHub repository from now on so you'll submit a link to the code in your repo for Charlie's review
+
+--
+
+1. Time change
 
 
 
