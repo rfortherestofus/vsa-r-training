@@ -1,4 +1,4 @@
-VSA R Training: Fall 2022
+VSA R Training: Fall 2022!
 ================
 
 # Welcome to VSA R Training!
