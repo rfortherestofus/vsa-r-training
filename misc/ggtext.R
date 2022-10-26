@@ -8,3 +8,5 @@ ggplot(data = penguins,
   geom_point() +
   labs(title = "Penguins are <span style='color: red;'>really cool</span>") +
   theme(plot.title = element_markdown())
+
+# I got this to work!
