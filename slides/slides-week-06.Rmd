@@ -287,11 +287,7 @@ class: inverse, center, middle
 
 --
 
-1. Project assignment: figure out ways your data is not tidy and tidy it (sounds simple, but it's not!).
-
---
-
-1. You'll work in your GitHub repository from now on so you'll submit a link to the code in your repo for Charlie's review
+1. No project assignment next week
 
 --
 
