@@ -1,5 +1,5 @@
 ---
-title: "VSA R Training: Week 8 (More Data Tidying)"
+title: "VSA R Training<br>Week 8<br>More Data Tidying"
 output:
   xaringan::moon_reader:
     css: ["style.css", "default"]
@@ -63,9 +63,6 @@ Other types of tidy data - surveys! separate()
 
 # Housekeeping
 
---
-
-Next week is another catch-up week and assignment amnesty
 
 ---
 
@@ -86,7 +83,7 @@ Often you'll see this error:
 # Run `rlang::last_error()` to see where the error occurred.
 ```
 
-Let's walk through an example from Mychal
+Let's walk through an example
 
 ---
 
@@ -207,7 +204,7 @@ tweet_embed("https://twitter.com/charliejhadley/status/1519696924328214528",
 
 # Let's tidy the survey data!
 
-David and I till take turns to read in and tidy the survey data from:
+David and I will take turns to read in and tidy the survey data from:
 
 - Survey Monkey
 
@@ -247,6 +244,6 @@ class: inverse, center, middle
 
 - Advanced data visualisation with {ggplot2}, including using {ggtext} for direct labelling
 
-- No new assignment
+- No new project assignment
 
 - The week of Monday 21st November is another catch-up week
