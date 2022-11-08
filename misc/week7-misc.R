@@ -71,4 +71,5 @@ acs_poverty_gender
 
 gapminder_wide <- read_csv("https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder_wide.csv")
 
-gapminder_wide
+gapminder_wide %>% 
+  pivot_longer(cols = )
