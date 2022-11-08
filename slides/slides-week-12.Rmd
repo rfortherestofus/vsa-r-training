@@ -1,5 +1,5 @@
 ---
-title: "R in 3 Months: Week 12 (Advanced RMarkdown)"
+title: "VSA R Training: Week 12 (Advanced RMarkdown)"
 output:
   xaringan::moon_reader:
     css: ["style.css", "default"]
