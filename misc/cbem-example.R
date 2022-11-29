@@ -8,7 +8,6 @@ library(scales)
 library(shadowtext)
 library(ggchicklet)
 library(hrbrthemes)
-# library(omni)
 library(patchwork)
 
 
@@ -27,11 +26,12 @@ cbem_filtered <- cbem %>%
   mutate(plot_label = percent(percent, accuracy = 0.1),
          group_x_pos = c(1, 2, 3, 4, 5.25))
 
+
 cbem_state_avg <- cbem %>%
   filter(age_group == "Under 25") %>% 
   filter(location == "Alaska") %>%
   filter(group == "All Persons") %>% 
-  select(percent) %>% 
+  select(percent) %>%
   mutate(plot_label = str_glue("CBEM State Rate\n{percent(percent, accuracy = 0.1)}"))
 
 cbem_race_ethnicity_colors <- c(
@@ -56,18 +56,21 @@ cbem_filtered %>%
              color = "#757575",
              linetype = "dashed") +
   geom_shadowtext(data = cbem_state_avg,
-                  aes(x = 5.25, y = percent,
-                      label = plot_label),
-                  inherit.aes = FALSE,
-                  lineheight = 1,
-                  family = "Futura",
-                  bg.color = "white",
-                  color = "#757575",
-                  vjust = -0.4,
-                  size = 8 / .pt) +
+            aes(x = 5.25, 
+                y = percent,
+                label = plot_label),
+            inherit.aes = FALSE,
+            lineheight = 1,
+            family = "Futura",
+            bg.color = "white",
+            color = "#757575",
+            vjust = -0.4,
+            size = 8 / .pt) +
   
   # Bars
   geom_chicklet() +
+  
+  
   
   # Text on bars
   geom_text(aes(label = plot_label),
@@ -180,6 +183,9 @@ cbem_plot <- function(age_group_to_filter, location_to_filter) {
     )
   
 }
+
+
+cbem_plot(age_group_to_filter = "Under 25", location_to_filter = "New York")
 
 cbem_plot(age_group_to_filter = "Under 18", location_to_filter = "Alaska") +
   cbem_plot(age_group_to_filter = "Under 25", location_to_filter = "Alaska")
