@@ -1,5 +1,5 @@
 ---
-title: "VSA R Training: Week 12 (Advanced RMarkdown)"
+title: "VSA R Training<br>Week 12<br>Advanced RMarkdown"
 output:
   xaringan::moon_reader:
     css: ["style.css", "default"]
@@ -94,6 +94,12 @@ We've seen that you can make the following:
 
 ---
 
+class: inverse, center, middle
+
+# Books
+
+---
+
 ## Beautiful books with `bookdown`
 
 .pull-left[
@@ -108,6 +114,13 @@ The `bookdown` package was used for writing R for Data Science and many other ex
 ???
 
 https://rfortherestofus.com/2022/04/bookdown/
+https://book.rwithoutstatistics.com/
+
+---
+
+class: inverse, center, middle
+
+# PDF Reports
 
 
 ---
@@ -118,6 +131,8 @@ https://rfortherestofus.com/2022/04/bookdown/
 The `pagedown` package is designed to simplify designing documents you need to print.
 
 Instead of learning `LaTeX` you can use HTML and CSS!
+
+[Blog post on customizing `pagedown`](https://rfortherestofus.com/2022/11/no-designer-needed/)
 
 ]
 
@@ -144,9 +159,16 @@ R for the Rest of Us has created a package called [`pagedreport`](https://pagedr
 
 class: inverse, center, middle
 
-## Websites created all in RMarkdown
+# Websites
 
 ---
+
+[![](images/westchester-covid-site.png)](https://westchester-covid.mattherman.info/)
+
+
+
+---
+
 
 ## `distill` for websites (and blogs)
 
@@ -156,25 +178,30 @@ Using `distill` is the easiest way to create a fully functioning data blog with 
 
 We'll put together a thorough discussion thread about this.
 
+---
+
+class: inverse, center, middle
+
+# Parameterized reports
 
 ---
 
 ## Parameterized reports
 
-Use [parametrized RMarkdown reporting](https://bookdown.org/yihui/rmarkdown/parameterized-reports.html) to make a separate report for each region
+Use [parametrized RMarkdown reporting](https://bookdown.org/yihui/rmarkdown/parameterized-reports.html) to make a separate report for each group
 
 ```{yaml}
 ---
 params:
-  state: "Alaska"
-title: "`r params$state` Report"
+  species: "Adelie"
+title: "`r params$species` Report"
 ---
   
 ```
 
 ```{r eval = FALSE}
-qualitative_data %>% 
-  filter(state == params$state)
+penguins %>% 
+  filter(species == params$species)
 ```
 
 ???
@@ -302,13 +329,13 @@ In the final live session we'll cover:
 
 class: inverse, center, middle
 
-## Final assignment:<br>Show us what you can do!
+# Final assignment
 
 ---
 
 ### Final assignment
 
-We'd love to understand how R in 3 Months is going to help you with your work/datasets.
+We'd love to understand how the VSA R Training is going to help you with your work/datasets.
 
 --
 
@@ -318,34 +345,18 @@ We'd like you to record a 5 minute video showing something you can now do with y
 
 > [Loom.com](https://www.loom.com/pricing) has a free tier that will allow you to record and share 5 minute videos.
 
-There's a form to fill on [Week 13's assignment submission page](https://rfortherestofus.com/courses/r-in-3-months-fall-2022/lessons/r-in-3-months-sfall-2022-final-project-assignment/).
+There's a form to fill on [Week 13's assignment submission page](https://rfortherestofus.com/courses/vsa-r-training-fall-2022/lessons/vsa-final-assignment/).
 
 
 ---
 
 # Feedback
 
-We love doing R in 3 Months and want to continually improve it.
+We love doing this type of training and want to continually improve it.
 
 --
 
-There are two ways we want to collect feedback:
-
---
-
-1. Open-ended discussion of what went well, what can be improved, etc XXX[DECIDE WHERE TO DO THIS!!]
-
---
-
-2. [Post-survey that shows your skill now](https://docs.google.com/forms/d/e/1FAIpQLSftjshhQqRbr6HyV8oK5fOGn_9LJNMkDZKeJRXXDDWejepBeg/viewform?usp=sf_link) (we'll compare this to what you told us in the pre-survey) and allows you to provide anonymous feedback.
-
-
----
-
-## Post-Survey
-
-🔗 [rfor.us/vsa-r-22-feedback](https://rfor.us/vsa-r-22-feedback)
-
+Please fill out this [post-survey that shows your skill now](https://docs.google.com/forms/d/e/1FAIpQLSftjshhQqRbr6HyV8oK5fOGn_9LJNMkDZKeJRXXDDWejepBeg/viewform?usp=sf_link) (we'll compare this to what you told us in the pre-survey) and allows you to provide anonymous feedback.
 
 ---
 
@@ -357,15 +368,11 @@ There are two ways we want to collect feedback:
 
 --
 
-- Record a <5 minutes video showing what you've learned
+- Record a <5-minute video showing what you've learned
 
 --
 
-- Please provide any feedback to reflection thread David will create
-
---
-
-- Please complete post-survey [rfor.us/vsa-r-22-feedback](https://rfor.us/vsa-r-22-feedback)
+- Please complete [post-survey](https://docs.google.com/forms/d/e/1FAIpQLSftjshhQqRbr6HyV8oK5fOGn_9LJNMkDZKeJRXXDDWejepBeg/viewform?usp=sf_link)
 
 --
 

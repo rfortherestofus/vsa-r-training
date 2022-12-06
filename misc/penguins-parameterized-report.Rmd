@@ -1,0 +1,50 @@
+---
+title: "`r params$species` Report"
+output: html_document
+params:
+  species: "Adelie"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      message = FALSE,
+                      warning = FALSE)
+```
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+library(scales)
+```
+
+This is a report about `r params$species` penguins.
+
+```{r}
+penguins_filtered <- penguins %>% 
+  filter(species == params$species)
+```
+
+```{r}
+avg_bill_length <- penguins_filtered %>%
+  summarize(mean_bill_length = mean(bill_length_mm,
+                                    na.rm = TRUE)) %>% 
+  mutate(mean_bill_length = number(mean_bill_length, accuracy = 0.1)) %>% 
+  pull(mean_bill_length)
+```
+
+The average bill length of `r params$species` penguins is `r avg_bill_length`.
+
+We can make a scatterplot that shows bill length and bill depth.
+
+```{r}
+penguins %>% 
+  ggplot(aes(x = bill_length_mm,
+             y = bill_depth_mm)) +
+  geom_point() +
+  theme_minimal() +
+  labs(title = str_glue("Bill length and bill depth of {params$species} penguins"))
+```
+
+
+
+
