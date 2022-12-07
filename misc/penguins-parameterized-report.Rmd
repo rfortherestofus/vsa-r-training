@@ -2,7 +2,9 @@
 title: "`r params$species` Report"
 output: html_document
 params:
-  species: "Adelie"
+  species: "Gentoo"
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -37,7 +39,7 @@ The average bill length of `r params$species` penguins is `r avg_bill_length`.
 We can make a scatterplot that shows bill length and bill depth.
 
 ```{r}
-penguins %>% 
+penguins_filtered %>% 
   ggplot(aes(x = bill_length_mm,
              y = bill_depth_mm)) +
   geom_point() +

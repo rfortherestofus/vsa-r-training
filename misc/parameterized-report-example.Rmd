@@ -1,0 +1,30 @@
+---
+title: "Parameterized Report Example"
+output: html_document
+params:
+  species: "Gentoo"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      message = FALSE,
+                      warning = FALSE)
+```
+
+My parameter is `r params$species`.
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+```{r}
+penguins %>% 
+  filter(species == params$species) %>% 
+  ggplot(aes(x = bill_length_mm,
+             y = bill_depth_mm)) +
+  geom_point() +
+  theme_minimal() 
+```
+
+
