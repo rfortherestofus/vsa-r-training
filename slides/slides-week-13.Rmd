@@ -70,9 +70,7 @@ class: inverse, center, middle
 
 ## Data Analysis
 
-** DAVID THERE AREN'T ANY RESPONSES FOR THE POST SURVEY **
-
-```{r echo = FALSE, warning=FALSE, message=FALSE, eval=FALSE}
+```{r echo = FALSE, warning=FALSE, message=FALSE}
 library(googlesheets4)
 library(tidyverse)
 library(janitor)
@@ -97,33 +95,32 @@ post_survey_tidy <- post_survey %>%
   mutate(timing = "Post")
 
 pre_post_plot <- function(area) {
-pre_survey_tidy %>% 
-  bind_rows(post_survey_tidy) %>% 
-  group_by(timing, name) %>% 
-  summarize(avg_response = mean(value, na.rm = TRUE)) %>% 
-  ungroup() %>% 
-  mutate(timing = fct_rev(timing)) %>% 
-  mutate(avg_response_formatted = number(avg_response, 0.1)) %>% 
+  pre_survey_tidy %>% 
+    bind_rows(post_survey_tidy) %>% 
+    group_by(timing, name) %>% 
+    summarize(avg_response = mean(value, na.rm = TRUE)) %>% 
+    ungroup() %>% 
+    mutate(timing = fct_rev(timing)) %>% 
+    mutate(avg_response_formatted = number(avg_response, 0.1)) %>% 
     filter(name == area) %>% 
-  ggplot(aes(timing, avg_response,
-             color = timing,
-             group = 1,
-             label = avg_response_formatted)) +
-  geom_line(color = "grey") +
-  geom_point(size = 10) +
-  geom_text(color = "white") +
-  theme_minimal(base_family = "Inter") +
-  theme(panel.grid.minor = element_blank(),
-        axis.title = element_blank(),
-        legend.position = "none",
-        axis.text.y = element_blank()) +
-  scale_y_continuous(limits = c(1, 10),
-                     breaks = seq(1, 10, 1)) +
+    ggplot(aes(timing, avg_response,
+               color = timing,
+               group = 1,
+               label = avg_response_formatted)) +
+    geom_line(color = "grey") +
+    geom_point(size = 10) +
+    geom_text(color = "white") +
+    theme_minimal(base_family = "Inter") +
+    theme(panel.grid.minor = element_blank(),
+          axis.title = element_blank(),
+          legend.position = "none") +
+    scale_y_continuous(limits = c(1, 10),
+                       breaks = seq(1, 10, 1)) +
     scale_color_manual(values = rev(c("#6cabdd", "#ff7400")))
 }
 ```
 
-```{r echo = FALSE, warning=FALSE, message=FALSE, dpi = 300, fig.height=3, eval=FALSE}
+```{r echo = FALSE, warning=FALSE, message=FALSE, dpi = 300, fig.height=3}
 pre_post_plot("data_analysis")
 ```
 
@@ -131,9 +128,7 @@ pre_post_plot("data_analysis")
 
 ## Data Visualization
 
-** DAVID THERE AREN'T ANY RESPONSES FOR THE POST SURVEY **
-
-```{r echo = FALSE, warning=FALSE, message=FALSE, dpi = 300, fig.height=3, eval=FALSE}
+```{r echo = FALSE, warning=FALSE, message=FALSE, dpi = 300, fig.height=3}
 pre_post_plot("visualization")
 ```
 
@@ -141,9 +136,8 @@ pre_post_plot("visualization")
 
 ## How Scared/Excited You Are to Learn R
 
-** DAVID THERE AREN'T ANY RESPONSES FOR THE POST SURVEY **
 
-```{r echo = FALSE, warning=FALSE, message=FALSE, dpi = 300, fig.height=3, eval=FALSE}
+```{r echo = FALSE, warning=FALSE, message=FALSE, dpi = 300, fig.height=3}
 pre_post_plot("scared")
 ```
 
@@ -269,7 +263,7 @@ count_party_by_marital %>%
 
 We mentioned earlier in the course the `{wakefield}` package to create fake datasets:
 
-```{r, eval=TRUE}
+```{r, eval=TRUE, warning = FALSE, message = FALSE}
 set.seed(1980)
 r_data_frame(50,
              id,
@@ -435,7 +429,7 @@ class: inverse, center, middle
 
 ## Your feedback
 
-We have a very short post-course survey - [https://forms.gle/FZAaRGQ7nkpPmdJFA](https://forms.gle/FZAaRGQ7nkpPmdJFA)
+[We have a very short post-course survey](https://forms.gle/FZAaRGQ7nkpPmdJFA)
 
 --
 
@@ -446,7 +440,7 @@ We'd also like to ask you to record a ~5min video with [loom.com](https://loom.c
 
 ## Book 1:1 sessions with Charlie
 
-You can book a 1:1 with Charlie from January 2023 - [https://savvycal.com/charliejhadley-r-for-the-rest-of-us/2nd-1to1-jan-2023](https://savvycal.com/charliejhadley-r-for-the-rest-of-us/2nd-1to1-jan-2023).
+[You can book a 1:1 with Charlie from January 2023](https://savvycal.com/charliejhadley-r-for-the-rest-of-us/2nd-1to1-jan-2023).
 
 ---
 
